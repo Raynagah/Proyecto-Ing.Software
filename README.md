@@ -55,7 +55,16 @@ Pasos implementacion documento docker
     - docker-compose down
 
 
-3.- Acceso a la aplicación:
+3.- Recuerda que para que todo funcione correctamente, deberás:
+
+    Ejecutar npm install en el directorio backend para instalar las dependencias
+    
+    Construir las imágenes con docker-compose build
+    
+    Iniciar los servicios con docker-compose up
+
+
+4.- Acceso a la aplicación:
 
     Frontend: http://localhost
     
