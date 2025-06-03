@@ -16,27 +16,14 @@ Docker instalado en tu sistema
 
 Docker Compose instalado
 
-Pasos para ejecutar:
+Como ejecutar en bash: 
 
-bash
-# Clonar el repositorio (si es necesario)
-# git clone [tu-repositorio]
-# cd masterbikes
+- Clonar el repositorio (si es necesario)
+- git clone [tu-repositorio]
+- cd masterbikes
 
-# Construir y ejecutar los contenedores
-docker-compose up --build
+- Construir y ejecutar los contenedores
+-> docker-compose up --build
 
-# Para detener los contenedores
-# docker-compose down
-Acceso a la aplicación:
-
-Frontend: http://localhost
-
-Backend API: http://localhost/api/bikes
-
-Características Implementadas
-Frontend:
-
-Interfaz responsive para web y móviles
-
-Sistema de
+- Para detener los contenedores
+- docker-compose down
