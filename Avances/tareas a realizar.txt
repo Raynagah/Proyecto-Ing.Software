@@ -11,6 +11,6 @@ El MVP debe ser desplegado en una de las siguientes 2 plataformas disponibles: N
 MongoDB para la base de datos es recomendada.
 
 Después de haber hecho todo lo anterior debemos definir las interfaces que tendrá el sistema
-	- login con aouth2 o similar
+	- login con aouth2 o awt similar
 	- land page o página de inicio donde debemos tener nuestros servicios.
 	- se recomienda AntD o material-ui como framework para facilitar la creación de interfaces.
