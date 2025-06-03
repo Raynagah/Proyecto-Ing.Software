@@ -54,8 +54,16 @@ Pasos implementacion documento docker
     - Para detener los contenedores
     - docker-compose down
 
+3.- Recuerda que para que todo funcione correctamente, deberás:
 
-3.- Acceso a la aplicación:
+    Ejecutar npm install en el directorio backend para instalar las dependencias
+    
+    Construir las imágenes con docker-compose build
+    
+    Iniciar los servicios con docker-compose up
+
+
+4.- Acceso a la aplicación:
 
     Frontend: http://localhost
     
