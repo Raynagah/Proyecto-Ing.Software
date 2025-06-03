@@ -7,7 +7,8 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
 - Documentación obtenida de Docker Hub.
 
 
---- Orden carpetas y archivos
+0.- Orden carpetas y archivos
+
     masterbikes/
     ├── docker-compose.yml
     ├── Dockerfile
