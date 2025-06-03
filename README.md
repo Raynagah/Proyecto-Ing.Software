@@ -9,21 +9,28 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
 
 Pasos implementacion documento docker
 
-Instrucciones para Implementación
-Requisitos previos:
+1.-Instrucciones para Implementación
+    Requisitos previos:
+    
+    Docker instalado en tu sistema
+    
+    Docker Compose instalado
 
-Docker instalado en tu sistema
+2.-Como ejecutar en bash: 
 
-Docker Compose instalado
+    - Clonar el repositorio (si es necesario)
+    - git clone [tu-repositorio]
+    - cd masterbikes
+    
+    - Construir y ejecutar los contenedores
+    -> docker-compose up --build
+    
+    - Para detener los contenedores
+    - docker-compose down
 
-Como ejecutar en bash: 
 
-- Clonar el repositorio (si es necesario)
-- git clone [tu-repositorio]
-- cd masterbikes
+3.- Acceso a la aplicación:
 
-- Construir y ejecutar los contenedores
--> docker-compose up --build
-
-- Para detener los contenedores
-- docker-compose down
+    Frontend: http://localhost
+    
+    Backend API: http://localhost/api/bikes
