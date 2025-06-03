@@ -7,6 +7,31 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
 - Documentación obtenida de Docker Hub.
 
 
+--- Orden carpetas y archivos
+    masterbikes/
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── README.md
+    ├── frontend/
+    │   ├── public/
+    │   │   ├── index.html
+    │   │   ├── css/
+    │   │   │   └── styles.css
+    │   │   ├── js/
+    │   │   │   └── app.js
+    │   │   └── images/
+    │   │       └── (imágenes del proyecto)
+    │   └── Dockerfile
+    ├── backend/
+    │   ├── app.js
+    │   ├── package.json
+    │   ├── routes/
+    │   │   └── api.js
+    │   └── Dockerfile
+    └── nginx/
+        ├── nginx.conf
+        └── Dockerfile
+
 Pasos implementacion documento docker
 
 1.-Instrucciones para Implementación
