@@ -1,0 +1,16 @@
+Se debe considerar un contenedor Docker para estos elementos:
+	- web
+	- app
+	- lógica de negocios
+	- 
+Intentar usar Flutter para este desarrollo.
+Nginx es útil para la creación del proyecto en alguno de los campos. Evita los ataques DDOS.
+Apache también será útil para el desarrollo.
+
+El MVP debe ser desplegado en una de las siguientes 2 plataformas disponibles: Netlify para cargar la aplicación o Heroku para cargar una máquina virtual o usar una de las que tiene el plan gratuito.
+MongoDB para la base de datos es recomendada.
+
+Después de haber hecho todo lo anterior debemos definir las interfaces que tendrá el sistema
+	- login con aouth2 o similar
+	- land page o página de inicio donde debemos tener nuestros servicios.
+	- se recomienda AntD o material-ui como framework para facilitar la creación de interfaces.
