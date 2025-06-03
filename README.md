@@ -54,6 +54,7 @@ Pasos implementacion documento docker
     - Para detener los contenedores
     - docker-compose down
 
+
 3.- Recuerda que para que todo funcione correctamente, deberás:
 
     Ejecutar npm install en el directorio backend para instalar las dependencias
