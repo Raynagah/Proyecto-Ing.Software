@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterBikes - Inicio</title>
+    <style>
+        /* Estilos basados en la nueva imagen corporativa */
+        :root {
+            --primary: #0066cc;  /* Azul corporativo */
+            --secondary: #00cc66; /* Verde energético */
+            --accent: #ff9900;   /* Amarillo/naranja */
+            --error: #e74c3c;
+            --success: #2ecc71;
+            --light: #f5f7fa;
+            --dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .auth-buttons .btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-login {
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-right: 1rem;
+        }
+        
+        .btn-register {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+        
+        /* Catálogo */
+        .catalog {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .bike-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .bike-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .bike-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .bike-info {
+            padding: 1.5rem;
+        }
+        
+        .bike-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .bike-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        
+        .bike-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-solid {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+        
+        /* Modal de Login/Registro */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .auth-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .auth-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .auth-header h2 {
+            font-size: 1.8rem;
+        }
+        
+        .auth-tabs {
+            display: flex;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            background-color: white;
+            font-weight: 600;
+        }
+        
+        .auth-content {
+            padding: 2rem;
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .modal-btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-btn:hover {
+            background-color: #0052a3;
+        }
+        
+        .error-message {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .success-message {
+            color: var(--success);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .verification-code {
+            display: none;
+        }
+        
+        .demo-account {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .demo-account p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .demo-credentials {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Estilos para usuario logueado */
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .user-name {
+            font-weight: 500;
+        }
+        
+        .logout-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Master<span>Bikes</span></div>
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Tienda</a>
+                <a href="#">Arriendos</a>
+                <a href="#">Reparaciones</a>
+                <a href="#">Nosotros</a>
+            </div>
+            <div class="auth-buttons" id="auth-buttons">
+                <a href="#" class="btn btn-login" id="login-btn">Ingresar</a>
+                <a href="#" class="btn btn-register" id="register-btn">Registrarse</a>
+            </div>
+            <div class="user-profile" id="user-profile" style="display: none;">
+                <div class="user-avatar" id="user-avatar">U</div>
+                <span class="user-name" id="user-name">Usuario</span>
+                <button class="logout-btn" id="logout-btn">Cerrar sesión</button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Tu aventura sobre dos ruedas comienza aquí</h1>
+        <p>Encuentra la bicicleta perfecta, arrienda para tu próximo viaje o agenda una reparación con nuestros expertos</p>
+        
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <h3>Compra</h3>
+                <p>Bicicletas de calidad para todos los estilos y necesidades</p>
+                <a href="#" class="btn btn-solid">Ver catálogo</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Arriendo</h3>
+                <p>Flexibles planes por horas, días o semanas</p>
+                <a href="#" class="btn btn-solid">Reservar ahora</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Reparación</h3>
+                <p>Agenda con nuestros técnicos certificados</p>
+                <a href="#" class="btn btn-solid">Solicitar servicio</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Catálogo -->
+    <section class="catalog">
+        <div class="section-title">
+            <h2>Nuestras Bicicletas Destacadas</h2>
+            <p>Productos de calidad para todos los ciclistas</p>
+        </div>
+        
+        <div class="bike-grid">
+            <!-- Bicicleta 1 -->
+            <div class="bike-card">
+                <div class="bike-img" style="background-image: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="bike-info">
+                    <h3>Montaña Pro 29"</h3>
+                    <p>Bicicleta todo terreno con suspensión delantera</p>
+                    <div class="bike-price">$450.000</div>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-outline">Detalles</a>
+                        <a href="#" class="btn btn-solid">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bicicleta 2 -->
+            <div class="bike-card">
+                <div class="bike-img" style="background-image: url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="bike-info">
+                    <h3>Urbana Elegance</h3>
+                    <p>Diseño clásico para la ciudad</p>
+                    <div class="bike-price">$320.000</div>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-outline">Detalles</a>
+                        <a href="#" class="btn btn-solid">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bicicleta 3 -->
+            <div class="bike-card">
+                <div class="bike-img" style="background-image: url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="bike-info">
+                    <h3>Ruta Velocity</h3>
+                    <p>Alto rendimiento para carretera</p>
+                    <div class="bike-price">$580.000</div>
+                    <div class="bike-actions">
+                        <a href="#" class="btn btn-outline">Detalles</a>
+                        <a href="#" class="btn btn-solid">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="logo">Master<span>Bikes</span></div>
+        <p>30 años moviendo a San Diego sobre dos ruedas</p>
+        
+        <div class="footer-links">
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Contacto</a>
+            <a href="#">Trabaja con nosotros</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <p>&copy; 2025 MasterBikes. Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Modal de Login/Registro -->
+    <div class="modal" id="auth-modal">
+        <div class="auth-container">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-header">
+                <h2>MasterBikes</h2>
+                <p id="auth-modal-title">Acceso a tu cuenta</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="login-tab">Iniciar Sesión</div>
+                <div class="auth-tab" id="register-tab">Registrarse</div>
+            </div>
+            
+            <div class="auth-content">
+                <!-- Formulario de Login -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" required>
+                        <div class="error-message" id="login-email-error">Por favor ingresa un correo válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                        <div class="error-message" id="login-password-error">La contraseña es requerida</div>
+                    </div>
+                    
+                    <button type="button" class="modal-btn" id="login-submit">Ingresar</button>
+                    
+                    <div class="error-message" id="login-general-error" style="text-align: center; margin-top: 1rem;"></div>
+                    
+                    <div class="demo-account">
+                        <p>Usa estas credenciales para probar el sistema:</p>
+                        <p class="demo-credentials">Email: tester@masterbikes.cl</p>
+                        <p class="demo-credentials">Contraseña: MasterBikes2025</p>
+                    </div>
+                </form>
+                
+                <!-- Formulario de Registro -->
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" required>
+                        <div class="error-message" id="register-name-error">Por favor ingresa tu nombre</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Correo Electrónico</label>
+                        <input type="email" id="register-email" required>
+                        <div class="error-message" id="register-email-error">Por favor ingresa un correo válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required minlength="6">
+                        <div class="error-message" id="register-password-error">La contraseña debe tener al menos 6 caracteres</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm" required>
+                        <div class="error-message" id="register-confirm-error">Las contraseñas no coinciden</div>
+                    </div>
+                    
+                    <div class="form-group verification-code" id="verification-code-group">
+                        <label for="verification-code">Código de Verificación</label>
+                        <input type="text" id="verification-code" placeholder="Ingresa el código de 6 dígitos">
+                        <div class="error-message" id="verification-code-error">Código incorrecto</div>
+                        <div class="success-message" id="verification-success">¡Correo verificado correctamente!</div>
+                    </div>
+                    
+                    <button type="button" class="modal-btn" id="register-submit">Registrarse</button>
+                    <button type="button" class="modal-btn" id="verify-btn" style="display: none;">Verificar Código</button>
+                    
+                    <div class="success-message" id="register-success" style="text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cuenta demo preconfigurada
+        const demoAccount = {
+            email: "tester@masterbikes.cl",
+            password: "MasterBikes2025",
+            name: "Usuario Demo"
+        };
+        
+        // Variables para el proceso de registro
+        let generatedCode = "";
+        let registeredUsers = [demoAccount];
+        let currentUser = null;
+        
+        // Elementos del DOM
+        const authModal = document.getElementById('auth-modal');
+        const closeModal = document.getElementById('close-modal');
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const authButtons = document.getElementById('auth-buttons');
+        const userProfile = document.getElementById('user-profile');
+        const userName = document.getElementById('user-name');
+        const userAvatar = document.getElementById('user-avatar');
+        const logoutBtn = document.getElementById('logout-btn');
+        
+        // Mostrar modal de login/registro
+        function showAuthModal(tab = 'login') {
+            authModal.style.display = 'flex';
+            switchTab(tab);
+        }
+        
+        // Ocultar modal
+        function hideAuthModal() {
+            authModal.style.display = 'none';
+        }
+        
+        // Cambiar entre pestañas de login y registro
+        function switchTab(tab) {
+            loginTab.classList.remove('active');
+            registerTab.classList.remove('active');
+            loginForm.classList.remove('active');
+            registerForm.classList.remove('active');
+            
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                loginForm.classList.add('active');
+                document.getElementById('auth-modal-title').textContent = 'Acceso a tu cuenta';
+            } else {
+                registerTab.classList.add('active');
+                registerForm.classList.add('active');
+                document.getElementById('auth-modal-title').textContent = 'Crear nueva cuenta';
+            }
+        }
+        
+        // Validar email
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+        
+        // Mostrar/ocultar mensajes de error
+        function showError(elementId, show, message = '') {
+            const element = document.getElementById(elementId);
+            if (message) element.textContent = message;
+            element.style.display = show ? 'block' : 'none';
+        }
+        
+        // Función de login
+        function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            let valid = true;
+            
+            // Validar email
+            if (!email || !isValidEmail(email)) {
+                showError('login-email-error', true);
+                valid = false;
+            } else {
+                showError('login-email-error', false);
+            }
+            
+            // Validar contraseña
+            if (!password) {
+                showError('login-password-error', true);
+                valid = false;
+            } else {
+                showError('login-password-error', false);
+            }
+            
+            if (!valid) return;
+            
+            // Verificar credenciales
+            const user = registeredUsers.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                // Login exitoso
+                document.getElementById('login-general-error').style.display = 'none';
+                currentUser = user;
+                updateUIAfterLogin();
+                hideAuthModal();
+            } else {
+                showError('login-general-error', true, 'Correo o contraseña incorrectos');
+            }
+        }
+        
+        // Actualizar UI después del login
+        function updateUIAfterLogin() {
+            authButtons.style.display = 'none';
+            userProfile.style.display = 'flex';
+            userName.textContent = currentUser.name;
+            userAvatar.textContent = currentUser.name.charAt(0).toUpperCase();
+        }
+        
+        // Actualizar UI después del logout
+        function updateUIAfterLogout() {
+            authButtons.style.display = 'block';
+            userProfile.style.display = 'none';
+            currentUser = null;
+        }
+        
+        // Iniciar proceso de registro
+        function startRegistration() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirm = document.getElementById('register-confirm').value;
+            let valid = true;
+            
+            // Validar nombre
+            if (!name) {
+                showError('register-name-error', true);
+                valid = false;
+            } else {
+                showError('register-name-error', false);
+            }
+            
+            // Validar email
+            if (!email || !isValidEmail(email)) {
+                showError('register-email-error', true, 'Por favor ingresa un correo válido');
+                valid = false;
+            } else if (registeredUsers.some(u => u.email === email)) {
+                showError('register-email-error', true, 'Este correo ya está registrado');
+                valid = false;
+            } else {
+                showError('register-email-error', false);
+            }
+            
+            // Validar contraseña
+            if (!password || password.length < 6) {
+                showError('register-password-error', true);
+                valid = false;
+            } else {
+                showError('register-password-error', false);
+            }
+            
+            // Validar confirmación
+            if (password !== confirm) {
+                showError('register-confirm-error', true);
+                valid = false;
+            } else {
+                showError('register-confirm-error', false);
+            }
+            
+            if (!valid) return;
+            
+            // Generar código de verificación (simulado)
+            generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+            
+            // Mostrar sección de verificación
+            document.getElementById('verification-code-group').style.display = 'block';
+            document.getElementById('register-submit').style.display = 'none';
+            document.getElementById('verify-btn').style.display = 'block';
+            
+            // Simular envío de código por email
+            alert(`Se ha enviado un código de verificación a ${email}\n\nCódigo generado (simulación): ${generatedCode}\n\nEn un sistema real, esto se enviaría por email.`);
+        }
+        
+        // Verificar código de registro
+        function verifyCode() {
+            const code = document.getElementById('verification-code').value;
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            
+            if (code === generatedCode) {
+                // Registro exitoso
+                showError('verification-code-error', false);
+                document.getElementById('verification-success').style.display = 'block';
+                
+                // Agregar usuario (en memoria, en un sistema real se enviaría al backend)
+                const newUser = { name, email, password };
+                registeredUsers.push(newUser);
+                
+                // Mostrar mensaje de éxito
+                document.getElementById('register-success').textContent = '¡Registro completado con éxito!';
+                document.getElementById('register-success').style.display = 'block';
+                
+                // Auto-login después de registro
+                setTimeout(() => {
+                    currentUser = newUser;
+                    updateUIAfterLogin();
+                    hideAuthModal();
+                }, 1500);
+            } else {
+                showError('verification-code-error', true);
+            }
+        }
+        
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Botones de autenticación
+            loginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showAuthModal('login');
+            });
+            
+            registerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showAuthModal('register');
+            });
+            
+            // Tabs del modal
+            loginTab.addEventListener('click', () => switchTab('login'));
+            registerTab.addEventListener('click', () => switchTab('register'));
+            
+            // Cerrar modal
+            closeModal.addEventListener('click', hideAuthModal);
+            authModal.addEventListener('click', (e) => {
+                if (e.target === authModal) hideAuthModal();
+            });
+            
+            // Botón de logout
+            logoutBtn.addEventListener('click', () => {
+                updateUIAfterLogout();
+            });
+            
+            // Formulario de login
+            document.getElementById('login-submit').addEventListener('click', login);
+            loginForm.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') login();
+            });
+            
+            // Formulario de registro
+            document.getElementById('register-submit').addEventListener('click', startRegistration);
+            document.getElementById('verify-btn').addEventListener('click', verifyCode);
+            registerForm.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    if (document.getElementById('verify-btn').style.display === 'block') {
+                        verifyCode();
+                    } else {
+                        startRegistration();
+                    }
+                }
+            });
+            
+            // Rellenar datos demo automáticamente al hacer clic en el tab de login
+            loginTab.addEventListener('click', function() {
+                document.getElementById('login-email').value = demoAccount.email;
+                document.getElementById('login-password').value = demoAccount.password;
+            });
+        });
+    </script>
+</body>
+</html>
