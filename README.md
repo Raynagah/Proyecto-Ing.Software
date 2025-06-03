@@ -5,3 +5,58 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
     - Debemos entregarle los requisitos para la creación del PMV (Producto Mínimo Viable).
     - Paralelamente, se debe establecer la arquitectura (en este caso Docker).
 - Documentación obtenida de Docker Hub.
+
+
+0.- Orden carpetas y archivos
+
+    masterbikes/
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── README.md
+    ├── frontend/
+    │   ├── public/
+    │   │   ├── index.html
+    │   │   ├── css/
+    │   │   │   └── styles.css
+    │   │   ├── js/
+    │   │   │   └── app.js
+    │   │   └── images/
+    │   │       └── (imágenes del proyecto)
+    │   └── Dockerfile
+    ├── backend/
+    │   ├── app.js
+    │   ├── package.json
+    │   ├── routes/
+    │   │   └── api.js
+    │   └── Dockerfile
+    └── nginx/
+        ├── nginx.conf
+        └── Dockerfile
+
+Pasos implementacion documento docker
+
+1.-Instrucciones para Implementación
+    Requisitos previos:
+    
+    Docker instalado en tu sistema
+    
+    Docker Compose instalado
+
+2.-Como ejecutar en bash: 
+
+    - Clonar el repositorio (si es necesario)
+    - git clone [tu-repositorio]
+    - cd masterbikes
+    
+    - Construir y ejecutar los contenedores
+    -> docker-compose up --build
+    
+    - Para detener los contenedores
+    - docker-compose down
+
+
+3.- Acceso a la aplicación:
+
+    Frontend: http://localhost
+    
+    Backend API: http://localhost/api/bikes
