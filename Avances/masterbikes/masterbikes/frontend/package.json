@@ -1,0 +1,21 @@
+{
+  "name": "masterbikes-frontend",
+  "version": "1.0.0",
+  "description": "Aplicación frontend para MasterBikes",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vite": "^4.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "@vitejs/plugin-react": "^4.2.1" 
+  }
+}
