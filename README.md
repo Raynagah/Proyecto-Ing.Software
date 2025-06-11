@@ -11,18 +11,20 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
 
     masterbikes/
     ├── docker-compose.yml
-    ├── Dockerfile
     ├── README.md
     ├── frontend/
     │   ├── public/
-    │   │   ├── index.html
     │   │   ├── css/
     │   │   │   └── styles.css
     │   │   ├── js/
     │   │   │   └── app.js
     │   │   └── images/
     │   │       └── (imágenes del proyecto)
-    │   └── Dockerfile
+    │   ├── index.html
+    │   ├── package.json
+    │   ├── vite.config.js
+    │   ├── Dockerfile
+    |   └── nginx.conf
     ├── backend/
     │   ├── app.js
     │   ├── package.json
@@ -30,7 +32,6 @@ Repositorio dedicado a la creación del proyecto que se solicita en Ing.Software
     │   │   └── api.js
     │   └── Dockerfile
     └── nginx/
-        ├── nginx.conf
         └── Dockerfile
 
 Pasos implementacion documento docker
