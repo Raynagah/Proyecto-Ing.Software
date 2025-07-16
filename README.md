@@ -8,6 +8,6 @@ Enlace a la página web del proyect: https://masterbikes.x10.mx/Masterbike/index
     - Debemos entregarle los requisitos para la creación del PMV (Producto Mínimo Viable).
     - En base a los requisitos y diagramas entregados, iteraremos hasta obtener un buen PMV, que cumpla con lo establecido en el encargo para la tercera evaluación.
     - El fin de esta etapa constituye la entrega del PMV y el despliegue de la página web en un hosting gratuito.
-
+aprobamos jejeje.
 ---
 
